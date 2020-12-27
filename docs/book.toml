@@ -1,0 +1,6 @@
+[book]
+authors = ["ant4g0nist"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Vulnerable Kext"
