@@ -1,9 +1,0 @@
-{
-    "builds": [
-      {
-          "scripts": {
-            "build": "cd docs/ && curl -L https://github.com/rust-lang/mdBook/releases/download/v0.4.4/mdbook-v0.4.4-x86_64-unknown-linux-gnu.tar.gz | tar xvz -C /tmp/ && /tmp/mdbook build && mv book ../public"
-          }
-      }
-    ]
-}
