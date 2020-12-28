@@ -6,11 +6,10 @@
 
 A WIP (work-in progress) "Vulnerable by Design" kext for iOS/macOS to play/learn with *OS kernel exploitation
 
-* Documentation can be found at [https://fuzzing.science/vulnerable-kext](https://fuzzing.science/vulnerable-kext/)
 
 ## Usage
 
-Please check the guide at [fuzzing.science](https://fuzzing.science/vulnerable-kext) to find in depth usage details
+* Documentation can be found at [https://fuzzing.science/vulnerable-kext](https://fuzzing.science/vulnerable-kext/)
 
 * Basic setup requirements
   * iOS device that can be jailbroken with [checkra1n](https://checkra.in/)
