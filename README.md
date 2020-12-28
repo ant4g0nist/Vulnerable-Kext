@@ -3,6 +3,8 @@
 
 # Usage:
 
+Please check the guide at [fuzzing.science](https://fuzzing.science/vulnerable-kext) to find in depth usage details
+
 Running the following command causes checkra1n to listen for attached iOS devices in DFU mode and boot pongoOS:
 ~~~
 /Applications/checkra1n.app/Contents/MacOS/checkra1n -c -p
@@ -17,8 +19,6 @@ kext_loader waits for a device that's booted pongo shell!
 
 for more details about ktrw, check [ktrw](https://github.com/googleprojectzero/ktrw)
 
-# Symbols:
-    Check symbols.py to find the required symbols!
 
 ## TODO
 - [ ] Add IOKit stuff
@@ -26,5 +26,5 @@ for more details about ktrw, check [ktrw](https://github.com/googleprojectzero/k
 - [ ] Maybe improve stability of loading kexts
 
 ## credits
-- @bazad for the super awesome [ktrw](https://github.com/googleprojectzero/ktrw)
+- [@_bazad](https://twitter.com/_bazad) for the super awesome [ktrw](https://github.com/googleprojectzero/ktrw)
 - checkra1n team for the jailbreak
