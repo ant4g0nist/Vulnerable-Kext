@@ -1,7 +1,7 @@
 #include <sys/types.h>
 #include <sys/syscall.h>
 #include <mach/mach_types.h>
-#include <mach/kern_return.h> /* does one of the above drag this in? */
+#include <mach/kern_return.h>
 
 #include "kernel_imports.h"
 #include "third_party/kern_control.h"
