@@ -33,7 +33,7 @@ For more details about ktrw, check [ktrw](https://github.com/googleprojectzero/k
 
 ## Disclaimer
 
-> [Vulnerable-Kext](https://github.com/ant4g0nist/Vulnerable-Kext) is an intentionally vulnerable kext for iOS/macOS. DO NOT use this your production environments, this project is meant for educational purpose only.
+> [Vulnerable-Kext](https://github.com/ant4g0nist/Vulnerable-Kext) is an intentionally vulnerable kext for iOS/macOS, meant for educational purpose only.
 
 ## TODO
 
