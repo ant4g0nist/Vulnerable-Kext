@@ -1,7 +1,7 @@
 #ifndef KERNEL_FUNCTIONS_H
 #define KERNEL_FUNCTIONS_H
 
-#include "third_party/kern_control.h"
+#include "kern_control.h"
 
 typedef char * caddr_t;
 typedef unsigned long size_t;

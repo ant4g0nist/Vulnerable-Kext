@@ -3,7 +3,7 @@
 #include <mach/mach_types.h>
 #include <mach/kern_return.h>
 
-#include "kernel_imports.h"
+#include "third_party/kernel_imports.h"
 #include "third_party/kern_control.h"
 #include "third_party/kmod.h"
 #include "vulnerabilities.h"

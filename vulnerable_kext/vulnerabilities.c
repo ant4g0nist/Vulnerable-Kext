@@ -1,7 +1,7 @@
 #include <sys/types.h>
 #include <mach/mach_types.h>
 
-#include "kernel_imports.h"
+#include "third_party/kernel_imports.h"
 #include "third_party/kern_control.h"
 #include "vulnerabilities.h"
 

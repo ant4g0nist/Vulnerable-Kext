@@ -25,7 +25,7 @@ LDFLAGS  = -Xlinker -kext -nostdlib -Xlinker -fatal_warnings
 SOURCES = vulnerable_kext.c \
 			vulnerabilities.c
 
-HEADERS = kernel_imports.h \
+HEADERS = third_party/kernel_imports.h \
 		  vulnerabilities.h
 
 $(TARGET): $(SOURCES) $(HEADERS)
