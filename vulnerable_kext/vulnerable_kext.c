@@ -8,68 +8,27 @@
 #include "third_party/kmod.h"
 #include "vulnerabilities.h"
 
-/*
-KMOD_DECL takes 2 arguments.
- arg0: if sample_module_start/sample_module_stop are the start/stop methods, `sample` is argument 1 
- arg1: random version that is loaded from Makefile
-*/
-
 KMOD_DECL(fuzzing_science, VERSION)
 
 #define	CONTROL_NAME "fuzzing.science.vulnkext"
 
 proc_t kernproc;
-static kern_ctl_ref _ctlref; /* an opaque reference to the control */
 
-/*
-Here be callbacks. The first parameter to each is a kern_ctl_ref which
-is a bit like self/this in an OO program - it tells the function exactly
-which control is being operated, so you can have a single instance of a
-callback routine service multiple controls. You also get either a unit
-number (or a sockaddr_ctl structure, which includes it as its sc_unit
-member - myself, i would have left the unit number as a parameter too,
-but hey), so you can (if i understand this right) tell which instance of
-that control is being operated - controls are a bit like server sockets
-in networking, and units are like sockets opened from them. You also get
-this unitinfo variable, which allows you to stash some data with each
-unit; in connect, it's a pointer-to-pointer-to-void, ie it leads you to
-a secret place where you can place a pointer to your data (as a void*),
-and in the other routines, it's a pointer-to-void, and you get whatever
-it was you put there in connect. The rest's pretty self-explanatory, i 
-think. For the return value, 0 means success, as always, otherwise pick 
-something from errno.h; EINVAL seems to be the catch-all error number in 
-the Apple example code.
-*/
+static kern_ctl_ref _ctlref;
 
 errno_t connect(kern_ctl_ref ctlref, struct sockaddr_ctl *addr, void **unitinfo)
 {
-	/* nothing much of interest in addr except sc_unit */
-	/* stash stuff into unitinfo here */
-	
-	return 0 ;
+	return 0;
 }
 
 errno_t disconnect(kern_ctl_ref ctlref, uint32_t unit, void *unitinfo)
 {
-	return 0 ;
+	return 0;
 }
 
 errno_t send(kern_ctl_ref ctlref, uint32_t unit, void *unitinfo, mbuf_t data, int flags)
 {
-	/*
-	There's a strong chance that you'll want to send a reply to the 
-	client round here; for that, you want the ctl_enqueuedata routine in 
-	kern_control.h, which looks like:
-	
-	errno_t ctl_enqueuedata(kern_ctl_ref ctlref, u_int32_t unit, void *data, size_t data_len, u_int32_t flags) ;
-	
-	Which does exactly what it says on the tin - puts some data on the
-	queue of client-bound messages on the socket. The only flag you
-	might want is CTL_DATA_NOWAKEUP, which means 'put the data on the
-	queue, but don't wake the client up so it can read it', a low act if
-	ever there was one.
-	*/
-	return 0 ;
+	return 0;
 }
 
 errno_t setopt(kern_ctl_ref ctlref, uint32_t unit, void *unitinfo, int opt, void *data, size_t data_len)
@@ -143,7 +102,6 @@ static void insert_vuln_ctl(__unused void *param, __unused int wr )
 	kern_ctl.ctl_recvsize                            = 512 * 1024;	
 
 	//callbacks
-
 	kern_ctl.ctl_connect 		= connect;
 	kern_ctl.ctl_disconnect 	= disconnect;
 	kern_ctl.ctl_send 			= send;
@@ -153,7 +111,7 @@ static void insert_vuln_ctl(__unused void *param, __unused int wr )
 	err = ctl_register(&kern_ctl, &_ctlref);
 	
 	if (err)
-		panic("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Failed to load fuzzing.science");
+		panic("Failed to load fuzzing.science");
 
 	kernproc = current_proc();
 

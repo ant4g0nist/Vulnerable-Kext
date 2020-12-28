@@ -1,6 +1,6 @@
 # _FREE
 
-Code from (kern_malloc.c)[bsd/kern/kern_malloc.c]
+Code from (kern_malloc.c)[https://github.com/apple/darwin-xnu/blob/master/bsd/kern/kern_malloc.c#L624]
 ~~~
 void
 _FREE(

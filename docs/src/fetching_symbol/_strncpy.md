@@ -4,7 +4,7 @@ We can find strncpy by searching for xrefs of some strings as we did above or se
 
 signature = "F6 03 00 AA E0 03 13 AA E1 03 15 AA E2 03 16 AA"
 
-Pseudo code indeed resembles implementation from [strncpy.c](xnu-6153.141.1/osfmk/arm/strncpy.c) :
+Pseudo code indeed resembles implementation from [strncpy.c](https://github.com/apple/darwin-xnu/blob/master/osfmk/arm/strncpy.c#L33) :
 
 ~~~
 char *__cdecl sub_FFFFFFF007D2BC4C(char *__dst, const char *__src, size_t __n)

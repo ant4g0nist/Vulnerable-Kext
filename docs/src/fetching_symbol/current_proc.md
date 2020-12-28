@@ -37,6 +37,6 @@ Xrefs will again land you in `current_proc()`
 
 - current_proc = 0xFFFFFFF0081025E4
 
-The functions `copyin` and `copyout` are defined in (copyio.c)[osfmk/arm64/copyio.c]
+The functions `copyin` and `copyout` are defined in [copyio.c](https://github.com/apple/darwin-xnu/blob/master/osfmk/arm64/copyio.c). 
 Xrefs to these 2 functions can be found by searching for example `necp_client_claim copyin client_id error` and `%s: %s copyout() error %d`
 respectively.
