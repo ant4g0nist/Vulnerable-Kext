@@ -1,10 +1,18 @@
 # Fetching Symbols
 
-I'll explain below how I managed to collect the required symbols for iPhone X on iOS version 13.4.1.
+I'll explain below how to collect the required symbols for iPhone X on iOS version 13.4.1.
 
-Download the firmware from https://ipsw.me/download/iPhone10,3/17E262. 
+Download the firmware from https://ipsw.me/download/iPhone10,3/17E262. Unzip the ipsw. 
 
-Open in IDA pro or Binary Ninja or whatever you choose and wait for it to finish the analysis.
+Now we'll use [jtool2](http://newosxbook.com/tools/jtool2.tgz) by Jonathan to decompress the kernel cache
+
+```
+#  /Users/ant4g0nist/tools/jtool2/jtool2 -dec kernelcache.release.iphone10b
+Decompressed kernel written to /tmp/kernel
+#  mv /tmp/kernel kernelcache.decompressed
+```
+
+Open the decompressed kernel in IDA pro or Binary Ninja or whatever you choose and wait for it to finish the analysis.
 
 The symbols we need are:
 
