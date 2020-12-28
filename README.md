@@ -27,6 +27,8 @@ For more details about ktrw, check [ktrw](https://github.com/googleprojectzero/k
 - [ ] Add IOKit stuff
 - [ ] Add vulnerabilities from reported XNU/IOKit bugs? 🤔
 - [ ] Maybe improve stability of loading kexts
+- [ ] Fix the bugs in the vulnerabilities I implemented 🧐
+- [ ] Add Writeups for exploitation
 
 ## credits
 - [@_bazad](https://twitter.com/_bazad) for the super awesome [ktrw](https://github.com/googleprojectzero/ktrw)
