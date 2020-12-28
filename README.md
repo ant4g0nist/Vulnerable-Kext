@@ -1,5 +1,5 @@
 # Vulnerable Kext
-    A WIP "Vulnerable by Design" kext for iOS/macOS to play/learn with iOS kernel exploitation
+    A WIP "Vulnerable by Design" kext for iOS/macOS to play/learn with *OS kernel exploitation
 
 # Usage:
 

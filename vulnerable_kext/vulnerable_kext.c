@@ -41,16 +41,16 @@ errno_t setopt(kern_ctl_ref ctlref, uint32_t unit, void *unitinfo, int opt, void
 			res = trigger_crash(opt);
 			break;
 
+		case HEAP_OVERFLOW:
+			res = trigger_heap_overflow(data, data_len);
+			break;
+
 		case INFO_LEAK:
 			res = trigger_info_leak(ctlref, unit, unitinfo, opt, data, data_len);
 			break;
 
 		case BUFFER_OVERFLOW:
 			res = trigger_buffer_overflow(data, data_len);
-			break;
-		
-		case HEAP_OVERFLOW:
-			res = trigger_heap_overflow(data, data_len);
 			break;
 
 		case USE_AFTER_FREE:
@@ -63,6 +63,10 @@ errno_t setopt(kern_ctl_ref ctlref, uint32_t unit, void *unitinfo, int opt, void
 
 		case DOUBLE_FETCH:
 			res = trigger_double_fetch(data, data_len);
+			break;
+
+		case ARBITRARY_WRITE:
+			res = trigger_arbitrary_write(data, data_len);
 			break;
 
 		default:

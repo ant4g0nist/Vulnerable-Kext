@@ -10,6 +10,7 @@
 #define USE_AFTER_FREE    0x5
 #define INTEGER_OVERFLOW  0x6
 #define DOUBLE_FETCH      0x7
+#define ARBITRARY_WRITE   0x8
 
 errno_t trigger_crash(uint32_t a);
 errno_t trigger_double_fetch(void *data, size_t data_len);
