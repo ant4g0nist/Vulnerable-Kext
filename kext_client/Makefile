@@ -10,7 +10,7 @@ kext_client: kext_client.c
 
 build: kext_client
 	codesign -f --entitlements ent.xml -s - kext_client
-	scp -P 2222 $@ root@localhost:/var/root/
+	scp -P 2222 kext_client root@localhost:/var/root/
 	ssh -p 2222 root@localhost "/var/root/kext_client"
 
 .PHONY : clean
